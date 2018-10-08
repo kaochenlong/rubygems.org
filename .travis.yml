@@ -37,6 +37,7 @@ before_install:
   - script/install_toxiproxy.sh
 
 before_script:
+  - cp config/database.yml.example config/database.yml
   - bundle exec rake db:create db:migrate db:test:prepare
 
 script:
