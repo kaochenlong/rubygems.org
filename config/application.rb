@@ -9,6 +9,8 @@ Bundler.require(*Rails.groups)
 
 module Gemcutter
   class Application < Rails::Application
+    config.load_defaults 5.1
+
     config.rubygems = Application.config_for :rubygems
 
     config.time_zone = "UTC"
