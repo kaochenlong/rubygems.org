@@ -1,3 +1,8 @@
-kubernetes:
-  namespace: rubygems-staging
-  context: rubygems
+# kubernetes:
+#   namespace: rubygems-staging
+#   context: rubygems
+
+deploy:
+  override:
+    - kubernetes-deploy rubygems-staging rubygems --template-dir config/deploy/staging
+    - cap $ENVIRONMENT deploy
